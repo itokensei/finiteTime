@@ -1,4 +1,4 @@
-addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.8.7")
+addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.8.8")
 addSbtPlugin("org.foundweekends.giter8" % "sbt-giter8-scaffold" % "0.11.0")
 addSbtPlugin("ch.epfl.scala" % "sbt-scalafix" % "0.9.25")
 addSbtPlugin("io.github.davidmweber" % "flyway-sbt" % "7.4.0")
