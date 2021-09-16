@@ -10,10 +10,7 @@ ThisBuild / semanticdbVersion := scalafixSemanticdb.revision
 
 val scala3Commons: Seq[Setting[_]] = Seq(
   scalaVersion := "3.0.2",
-  // Scala 3 migration compilation
-  // コンパイラはドロップされたScala2系の機能のほとんどを許容し、エラーの代わりに警告を出力します。
-  // 各警告は、コンパイラが非推奨のコードをクロスコンパイルの対応するコードに安全に書き換えることさえできることを強く示しています。
-  scalacOptions += "-source:3.0-migration",
+  scalacOptions += "-source:3.0-migration", // Emit warnings in place of errors on most of the dropped Scala 2 features.
   libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.9" % Test
 )
 
@@ -22,10 +19,10 @@ lazy val root = (project in file("."))
   .settings(
     scalaVersion := "2.13.6",
     scalacOptions ++= Seq(
-      "-feature",
-      "-deprecation",
-      "-Ywarn-unused",
-      "-Xsource:3"
+      "-feature", // Emit warning and location for usages of features that should be imported explicitly.
+      "-deprecation", // Emit warning and location for usages of deprecated APIs.
+      "-Ywarn-unused", // Enable specific unused warnings.
+      "-Xsource:3" // Enable some Scala 3 syntax and behavior.
     ),
     libraryDependencies ++= Seq(
       guice,
