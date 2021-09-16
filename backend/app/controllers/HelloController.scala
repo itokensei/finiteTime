@@ -9,7 +9,7 @@ import play.api.mvc.ControllerComponents
 import play.api.mvc.Request
 
 @Singleton
-class HelloController @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
+class HelloController @Inject() (cc: ControllerComponents) extends AbstractController(cc) {
 
   def get(name: Option[String]) =
     Action { implicit request: Request[AnyContent] =>
