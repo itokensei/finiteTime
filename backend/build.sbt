@@ -17,7 +17,7 @@ lazy val root = (project in file("."))
     libraryDependencies ++= Seq(
       guice,
       "org.apache.commons" % "commons-lang3" % "3.12.0",
-      "org.scalatestplus.play" %% "scalatestplus-play" % "5.0.0" % Test,
+      "org.scalatestplus.play" %% "scalatestplus-play" % "5.1.0" % Test,
       "org.tpolecat" %% "doobie-postgres" % "1.0.0-RC1",
       "org.tpolecat" %% "doobie-core" % "1.0.0-RC1",
     )
