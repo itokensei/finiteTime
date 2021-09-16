@@ -32,14 +32,7 @@ lazy val root = (project in file("."))
       "org.tpolecat" %% "doobie-core" % "1.0.0-RC1"
     )
   )
-  .dependsOn(application)
-
-lazy val application = project
-  .settings(scala3Commons)
   .dependsOn(domain)
 
 lazy val domain = project
   .settings(scala3Commons)
-  .dependsOn(util)
-
-lazy val util = project.settings(scala3Commons)
