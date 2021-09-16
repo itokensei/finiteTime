@@ -2,7 +2,11 @@ import sbt.Keys.{libraryDependencies, scalacOptions}
 
 name := """FiniteTime"""
 organization := "com.example"
+
 version := "1.0-SNAPSHOT"
+
+ThisBuild / semanticdbEnabled := true
+ThisBuild / semanticdbVersion := scalafixSemanticdb.revision
 
 val scala3Commons: Seq[Setting[_]] = Seq(
   scalaVersion := "3.0.2",
@@ -20,15 +24,15 @@ lazy val root = (project in file("."))
     scalacOptions ++= Seq(
       "-feature",
       "-deprecation",
-//      "-Xfatal-warnings", //migration中は無効
-      "-Xsource:3",
+      "-Ywarn-unused",
+      "-Xsource:3"
     ),
     libraryDependencies ++= Seq(
       guice,
       "org.apache.commons" % "commons-lang3" % "3.12.0",
       "org.scalatestplus.play" %% "scalatestplus-play" % "5.1.0" % Test,
       "org.tpolecat" %% "doobie-postgres" % "1.0.0-RC1",
-      "org.tpolecat" %% "doobie-core" % "1.0.0-RC1",
+      "org.tpolecat" %% "doobie-core" % "1.0.0-RC1"
     )
   )
   .dependsOn(application)
