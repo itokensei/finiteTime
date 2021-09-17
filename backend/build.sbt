@@ -2,8 +2,8 @@ import sbt.Keys.{libraryDependencies, scalacOptions}
 
 name := """FiniteTime"""
 organization := "com.example"
-
 version := "1.0-SNAPSHOT"
+Global / onChangedBuildSource := ReloadOnSourceChanges
 
 ThisBuild / semanticdbEnabled := true
 ThisBuild / semanticdbVersion := scalafixSemanticdb.revision
