@@ -1,5 +1,6 @@
 addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.8.8")
 addSbtPlugin("ch.epfl.scala" % "sbt-scalafix" % "0.9.29")
 addSbtPlugin("org.scalameta" % "sbt-scalafmt" % "2.4.3")
+addSbtPlugin("io.get-coursier" % "sbt-coursier" % "1.1.0-M13-4")
 addSbtPlugin("com.typesafe.sbt" % "sbt-native-packager" % "1.7.6")
 addSbtPlugin("ch.epfl.scala" % "sbt-scala3-migrate" % "0.4.5")
